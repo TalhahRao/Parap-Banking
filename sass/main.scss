@@ -1,0 +1,52 @@
+
+$primary: #1594FE;
+
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+$custom-theme-colors:(
+    "lt-primary": #E3F2FF,
+    "dark-primary": #1544AB
+);
+
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+$font-sizes: (
+  1: 3.5rem,  // Default: 2.5rem
+  2: 3rem, // Default: 2rem
+  3: 2.5rem,   // Default: 1.75rem
+  4: 1.5rem,
+  5: 1.25rem,
+  6: 1rem
+);
+$custom-font-sizes: (
+  7: 0.875rem,  // 14px
+  8: 0.75rem,   // 12px
+  9: 0.625rem,  // 10px
+);
+// Custom Spacing Map
+$custom-spacers: (
+  6: $spacer * 4, // 4rem (64px)
+  7: $spacer * 5, // 5rem (80px)
+  8: $spacer * 6  // 6rem (96px)
+);
+
+// Merge Custom & Default Spacing
+$spacers: map-merge($spacers, $custom-spacers);
+
+// Merge existing + custom sizes
+$font-sizes: map-merge($font-sizes, $custom-font-sizes);
+// Bootstrap ko import karo
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+
+$container-fluid-padding-x: 35px;
+
+
+.container-fluid {
+  padding-left: $container-fluid-padding-x;
+  padding-right: $container-fluid-padding-x;
+
+}
